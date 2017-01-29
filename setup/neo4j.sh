@@ -17,5 +17,3 @@ sudo sed -i '$a NEO4J_ULIMIT_NOFILE=40000' /etc/default/neo4j
 sudo sed -i -- 's/# End of file/root    soft    nofile  40000\nroot    hard    nofile  40000\nneo4j   soft    nofile  40000\nneo4j   hard    nofile  40000\nvagrant   soft    nofile  40000\nvagrant   hard    nofile  40000\n\n# End of file/g' /etc/security/limits.conf
 sudo sed -i -- 's/# session    required   pam_limits.so/session    required   pam_limits.so/g' /etc/pam.d/su
 sudo service neo4j restart
-
-# pip install py2neo - for importer!
