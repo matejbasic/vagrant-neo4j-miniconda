@@ -1,11 +1,11 @@
 # vagrant-neo4j-miniconda-py2neo-scikit
-Vagrant box based on ubuntu/trusty64 with Neo4j, Miniconda, py2neo and scikit-learn
+Vagrant box based on ubuntu/trusty64 with Neo4j, Miniconda, and libs such as py2neo, scikit-learn and matplotlib
 
 ## Installation
 ```bash
 vagrant up
 ```
-To install toolkits such as py2neo and scikit-learn:
+To install toolkits such as py2neo, scikit-learn and matplotlib:
 ```sh
 vagrant ssh
 chmod +x /public/libs.sh
@@ -22,6 +22,12 @@ Miniconda is installed in /usr/local and path is added to ~/.bashrc in a setup/m
 
 ### Libs and toolkits
 You can add/remove libs and toolkits in a public/libs.sh
+To output matplotlib's charts as an image, use Agg [backend](http://matplotlib.org/faq/usage_faq.html#what-is-a-backend):
+```python
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+```
 
 ### Other
 Shared dir VM path: /public
