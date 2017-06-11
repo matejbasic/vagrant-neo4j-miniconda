@@ -32,6 +32,9 @@ Vagrant.configure("2") do |config|
   # your network.
   # config.vm.network "public_network"
 
+  # Enable X forwarding
+  config.ssh.forward_x11 = true
+
   config.vm.synced_folder "public", "/public"
 
   config.vm.provider "virtualbox" do |vb|
